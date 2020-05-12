@@ -7,7 +7,7 @@ public class Tester {
         NamesHolder namesHolder = new NamesHolder(new String[5]);
 
         try {
-            namesHolder.add("Tom");
+            namesHolder.add(null);
             namesHolder.add("Rick");
             namesHolder.add("rick");
             namesHolder.add("Ala");
@@ -15,8 +15,7 @@ public class Tester {
             namesHolder.add("6thElement");  //ArrayIndexOutOfBoundsException
             namesHolder.remove("Tom");
             System.out.println(namesHolder.toString());
-        } catch
-        (NullPointerException | DuplicateException | ArrayIndexOutOfBoundsException | IllegalArgumentException e) {
+        } catch (RuntimeException e) {
             System.out.println(e.getMessage());
             System.out.println(namesHolder.toString());
         }
